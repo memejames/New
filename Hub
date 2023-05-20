@@ -1,0 +1,183 @@
+local Library = loadstring(game:HttpGet("https://pastebin.com/raw/vff1bQ9F"))()
+
+local Window = Library.CreateLib("Middle Age", "Sentinel")
+
+--FirstMain
+
+local MainTab = Window:NewTab("Main")
+
+local MainSection = MainTab:NewSection("Main")
+
+--MS
+
+MainSection:NewDropdown("Buy Crops", "...", {"coal", "lumber", "potions", "iron", "chalices", "gunpowder", "fish", "gold"}, function(currentOption)
+
+    if currentOption == "coal" then
+
+        
+
+local args = {
+
+    [1] = "coal",
+
+    [2] = false,
+
+    [3] = true
+
+}
+
+game:GetService("ReplicatedStorage").Remotes.Shop:FireServer(unpack(args))
+
+    elseif currentOption == "lumber" then
+
+local args = {
+
+    [1] = "lumber",
+
+    [2] = false,
+
+    [3] = true
+
+}
+
+game:GetService("ReplicatedStorage").Remotes.Shop:FireServer(unpack(args))
+
+    elseif currentOption == "potions" then
+
+        
+
+local args = {
+
+    [1] = "potions",
+
+    [2] = false,
+
+    [3] = true
+
+}
+
+game:GetService("ReplicatedStorage").Remotes.Shop:FireServer(unpack(args))
+
+    elseif currentOption == "iron" then
+
+       
+
+local args = {
+
+    [1] = "iron",
+
+    [2] = false,
+
+    [3] = true
+
+}
+
+game:GetService("ReplicatedStorage").Remotes.Shop:FireServer(unpack(args))
+
+   elseif currentOption == "chalices" then
+
+        
+
+local args = {
+
+    [1] = "chalices",
+
+    [2] = false,
+
+    [3] = true
+
+}
+
+game:GetService("ReplicatedStorage").Remotes.Shop:FireServer(unpack(args))
+
+   elseif currentOption == "gunpowder" then
+
+        
+
+local args = {
+
+    [1] = "gunpowder",
+
+    [2] = false,
+
+    [3] = true
+
+}
+
+game:GetService("ReplicatedStorage").Remotes.Shop:FireServer(unpack(args))
+
+    elseif currentOption == "fish" then
+
+        
+
+local args = {
+
+    [1] = "fish",
+
+    [2] = false,
+
+    [3] = true
+
+}
+
+game:GetService("ReplicatedStorage").Remotes.Shop:FireServer(unpack(args))
+
+    elseif currentOption == "gold" then
+
+        
+
+local args = {
+
+    [1] = "gold",
+
+    [2] = false,
+
+    [3] = true
+
+}
+
+game:GetService("ReplicatedStorage").Remotes.Shop:FireServer(unpack(args))
+
+    end
+
+end)
+
+MainSection:NewLabel("Player stuff")
+
+MainSection:NewToggle("Inf Stamina", "resets after u die.", function(state)
+
+    if state then
+
+    local StaminaObject = game.Players.LocalPlayer.Character.Stamina
+
+StaminaObject:GetPropertyChangedSignal("Value"):Connect(function()
+
+  StaminaObject.Value = 100
+
+end)
+
+    else
+
+        print("Toggle Off")
+
+    end
+
+end)
+
+-- Setting 
+
+local SettingTab = Window:NewTab("Setting")
+
+local SettingSection = SettingTab:NewSection("Setting")
+
+SettingSection:NewButton("Simple Spy 2.2", "Opens remote spy", function()
+
+    loadstring(game:HttpGet("https://github.com/exxtremestuffs/SimpleSpySource/raw/master/SimpleSpy.lua"))()
+
+end)
+
+SettingSection:NewKeybind("Hide,Open", "KeybindInfo", Enum.KeyCode.LeftShift, function()
+
+	Library:ToggleUI()end)
+
+SettingSection:NewLabel("Made By China was spyin on usa.")
