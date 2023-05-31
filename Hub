@@ -8,138 +8,17 @@ local MainTab = Window:NewTab("Main")
 
 local MainSection = MainTab:NewSection("Main")
 
+--Other
+
+local plr = game:GetService("Players").LocalPlayer
+
+--Remote
+local rem = game:GetService("ReplicatedStorage").Remotes.Shop
+
 --MS
 
 MainSection:NewDropdown("Buy Crops", "...", {"coal", "lumber", "potions", "iron", "chalices", "gunpowder", "fish", "gold"}, function(currentOption)
-
-    if currentOption == "coal" then
-
-        
-
-local args = {
-
-    [1] = "coal",
-
-    [2] = false,
-
-    [3] = true
-
-}
-
-game:GetService("ReplicatedStorage").Remotes.Shop:FireServer(unpack(args))
-
-    elseif currentOption == "lumber" then
-
-local args = {
-
-    [1] = "lumber",
-
-    [2] = false,
-
-    [3] = true
-
-}
-
-game:GetService("ReplicatedStorage").Remotes.Shop:FireServer(unpack(args))
-
-    elseif currentOption == "potions" then
-
-        
-
-local args = {
-
-    [1] = "potions",
-
-    [2] = false,
-
-    [3] = true
-
-}
-
-game:GetService("ReplicatedStorage").Remotes.Shop:FireServer(unpack(args))
-
-    elseif currentOption == "iron" then
-
-       
-
-local args = {
-
-    [1] = "iron",
-
-    [2] = false,
-
-    [3] = true
-
-}
-
-game:GetService("ReplicatedStorage").Remotes.Shop:FireServer(unpack(args))
-
-   elseif currentOption == "chalices" then
-
-        
-
-local args = {
-
-    [1] = "chalices",
-
-    [2] = false,
-
-    [3] = true
-
-}
-
-game:GetService("ReplicatedStorage").Remotes.Shop:FireServer(unpack(args))
-
-   elseif currentOption == "gunpowder" then
-
-        
-
-local args = {
-
-    [1] = "gunpowder",
-
-    [2] = false,
-
-    [3] = true
-
-}
-
-game:GetService("ReplicatedStorage").Remotes.Shop:FireServer(unpack(args))
-
-    elseif currentOption == "fish" then
-
-        
-
-local args = {
-
-    [1] = "fish",
-
-    [2] = false,
-
-    [3] = true
-
-}
-
-game:GetService("ReplicatedStorage").Remotes.Shop:FireServer(unpack(args))
-
-    elseif currentOption == "gold" then
-
-        
-
-local args = {
-
-    [1] = "gold",
-
-    [2] = false,
-
-    [3] = true
-
-}
-
-game:GetService("ReplicatedStorage").Remotes.Shop:FireServer(unpack(args))
-
-    end
-
+	rem:FireServer(tostring(currentOption), false, true)
 end)
 
 MainSection:NewLabel("Player stuff")
@@ -148,11 +27,11 @@ MainSection:NewToggle("Inf Stamina", "resets after u die.", function(state)
 
     if state then
 
-    local StaminaObject = game.Players.LocalPlayer.Character.Stamina
+    local StaminaObject = plr.Character.Stamina
 
-StaminaObject:GetPropertyChangedSignal("Value"):Connect(function()
+	StaminaObject:GetPropertyChangedSignal("Value"):Connect(function()
 
-  StaminaObject.Value = 100
+ 	 StaminaObject.Value = 100
 
 end)
 
