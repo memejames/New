@@ -1,6 +1,6 @@
 local Library = loadstring(game:HttpGet("https://pastebin.com/raw/vff1bQ9F"))()
 
-local Window = Library.CreateLib("Middle Age", "Sentinel")
+local Window = Library.CreateLib("FH99", "Sentinel")
 
 --FirstMain
 
@@ -26,7 +26,7 @@ local args = {
 
 }
 
-game:GetService("ReplicatedStorage").Remotes.Shop:FireServer(unpack(args))
+game:GetService("ReplicatedStorage").Packages.Knit.Services.ShopService.RF.Shop:InvokeServer(unpack(args))
 
     elseif currentOption == "lumber" then
 
@@ -40,7 +40,7 @@ local args = {
 
 }
 
-game:GetService("ReplicatedStorage").Remotes.Shop:FireServer(unpack(args))
+game:GetService("ReplicatedStorage").Packages.Knit.Services.ShopService.RF.Shop:InvokeServer(unpack(args))
 
     elseif currentOption == "potions" then
 
@@ -56,7 +56,7 @@ local args = {
 
 }
 
-game:GetService("ReplicatedStorage").Remotes.Shop:FireServer(unpack(args))
+game:GetService("ReplicatedStorage").Packages.Knit.Services.ShopService.RF.Shop:InvokeServer(unpack(args))
 
     elseif currentOption == "iron" then
 
@@ -72,7 +72,7 @@ local args = {
 
 }
 
-game:GetService("ReplicatedStorage").Remotes.Shop:FireServer(unpack(args))
+game:GetService("ReplicatedStorage").Packages.Knit.Services.ShopService.RF.Shop:InvokeServer(unpack(args))
 
    elseif currentOption == "chalices" then
 
@@ -88,7 +88,7 @@ local args = {
 
 }
 
-game:GetService("ReplicatedStorage").Remotes.Shop:FireServer(unpack(args))
+game:GetService("ReplicatedStorage").Packages.Knit.Services.ShopService.RF.Shop:InvokeServer(unpack(args))
 
    elseif currentOption == "gunpowder" then
 
@@ -104,7 +104,7 @@ local args = {
 
 }
 
-game:GetService("ReplicatedStorage").Remotes.Shop:FireServer(unpack(args))
+game:GetService("ReplicatedStorage").Packages.Knit.Services.ShopService.RF.Shop:InvokeServer(unpack(args))
 
     elseif currentOption == "fish" then
 
@@ -120,7 +120,7 @@ local args = {
 
 }
 
-game:GetService("ReplicatedStorage").Remotes.Shop:FireServer(unpack(args))
+game:GetService("ReplicatedStorage").Packages.Knit.Services.ShopService.RF.Shop:InvokeServer(unpack(args))
 
     elseif currentOption == "gold" then
 
@@ -136,7 +136,7 @@ local args = {
 
 }
 
-game:GetService("ReplicatedStorage").Remotes.Shop:FireServer(unpack(args))
+game:GetService("ReplicatedStorage").Packages.Knit.Services.ShopService.RF.Shop:InvokeServer(unpack(args))
 
     end
 
@@ -163,21 +163,3 @@ end)
     end
 
 end)
-
--- Setting 
-
-local SettingTab = Window:NewTab("Setting")
-
-local SettingSection = SettingTab:NewSection("Setting")
-
-SettingSection:NewButton("Simple Spy 2.2", "Opens remote spy", function()
-
-    loadstring(game:HttpGet("https://github.com/exxtremestuffs/SimpleSpySource/raw/master/SimpleSpy.lua"))()
-
-end)
-
-SettingSection:NewKeybind("Hide,Open", "KeybindInfo", Enum.KeyCode.LeftShift, function()
-
-	Library:ToggleUI()end)
-
-SettingSection:NewLabel("Made By China was spyin on usa.")
