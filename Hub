@@ -151,7 +151,6 @@ MainSection:NewToggle("Inf Stamina", "resets after u die.", function(state)
     local StaminaObject = game.Players.LocalPlayer.Character.Stamina
 
 StaminaObject:GetPropertyChangedSignal("Value"):Connect(function()
-
   StaminaObject.Value = 100
 
 end)
